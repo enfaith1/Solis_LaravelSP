@@ -3,11 +3,11 @@
 @section('title', 'Student List')
 
 @section('content')
+@section('header-actions')
+    <a href="{{ route('students.create') }}" class="btn btn-primary">Add New Student</a>
+@endsection
+
 <div class="card">
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
-        <h2>Student List</h2>
-        <a href="{{ route('students.create') }}" class="btn btn-success">Add New Student</a>
-    </div>
 
     <table>
         <thead>
@@ -24,9 +24,8 @@
                 <td>BS Computer Science</td>
                 <td>2nd Year</td>
                 <td class="actions">
-                    <a href="{{ route('students.show', 1) }}" class="action-link">View</a>
-                    <span>|</span>
-                    <a href="{{ route('students.edit', 1) }}" class="action-link">Edit</a>
+                    <x-view-button href="{{ route('students.show', 1) }}">View</x-view-button>
+                    <x-edit-button href="{{ route('students.edit', 1) }}">Edit</x-edit-button>
                 </td>
             </tr>
             <tr>
@@ -34,9 +33,8 @@
                 <td>BS Information Technology</td>
                 <td>2nd Year</td>
                 <td class="actions">
-                    <a href="{{ route('students.show', 2) }}" class="action-link">View</a>
-                    <span>|</span>
-                    <a href="{{ route('students.edit', 2) }}" class="action-link">Edit</a>
+                    <x-view-button href="{{ route('students.show', 2) }}">View</x-view-button>
+                    <x-edit-button href="{{ route('students.edit', 2) }}">Edit</x-edit-button>
                 </td>
             </tr>
             <tr>
@@ -44,9 +42,8 @@
                 <td>BS Computer Engineering</td>
                 <td>4th Year</td>
                 <td class="actions">
-                    <a href="{{ route('students.show', 3) }}" class="action-link">View</a>
-                    <span>|</span>
-                    <a href="{{ route('students.edit', 3) }}" class="action-link">Edit</a>
+                    <x-view-button href="{{ route('students.show', 3) }}">View</x-view-button>
+                    <x-edit-button href="{{ route('students.edit', 3) }}">Edit</x-edit-button>
                 </td>
             </tr>
             <tr>
@@ -54,9 +51,8 @@
                 <td>BS Information Systems</td>
                 <td>1st Year</td>
                 <td class="actions">
-                    <a href="{{ route('students.show', 4) }}" class="action-link">View</a>
-                    <span>|</span>
-                    <a href="{{ route('students.edit', 4) }}" class="action-link">Edit</a>
+                    <x-view-button href="{{ route('students.show', 4) }}">View</x-view-button>
+                    <x-edit-button href="{{ route('students.edit', 4) }}">Edit</x-edit-button>
                 </td>
             </tr>
             <tr>
@@ -64,9 +60,8 @@
                 <td>BS Computer Science</td>
                 <td>2nd Year</td>
                 <td class="actions">
-                    <a href="{{ route('students.show', 5) }}" class="action-link">View</a>
-                    <span>|</span>
-                    <a href="{{ route('students.edit', 5) }}" class="action-link">Edit</a>
+                    <x-view-button href="{{ route('students.show', 5) }}">View</x-view-button>
+                    <x-edit-button href="{{ route('students.edit', 5) }}">Edit</x-edit-button>
                 </td>
             </tr>
         </tbody>

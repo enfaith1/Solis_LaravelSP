@@ -5,167 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@yield('title', 'Student Portal')</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f5f5f5;
-            color: #333;
+            background-color: #ffffff;
+            color: #111;
+            -webkit-font-smoothing:antialiased;
         }
-
         nav {
-            background-color: #2c3e50;
-            padding: 1rem 2rem;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-bottom: 1px solid #eee;
+            padding: 0.75rem 1.25rem;
+            background: #fff;
         }
-
-        nav h1 {
-            color: #fff;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            color: #ecf0f1;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #3498db;
-        }
-
-        .container {
+        .nav-inner {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 2rem;
-        }
-
-        .card {
-            background: white;
-            border-radius: 8px;
-            padding: 2rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        h2 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #3498db;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            border: none;
-            cursor: pointer;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-        }
-
-        .btn:hover {
-            background-color: #2980b9;
-        }
-
-        .btn-secondary {
-            background-color: #95a5a6;
-        }
-
-        .btn-secondary:hover {
-            background-color: #7f8c8d;
-        }
-
-        .btn-success {
-            background-color: #27ae60;
-        }
-
-        .btn-success:hover {
-            background-color: #229954;
-        }
-
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 1rem;
-        }
-
-        table th,
-        table td {
-            padding: 1rem;
-            text-align: left;
-            border-bottom: 1px solid #ecf0f1;
-        }
-
-        table th {
-            background-color: #34495e;
-            color: white;
-            font-weight: 600;
-        }
-
-        table tr:hover {
-            background-color: #f8f9fa;
-        }
-
-        .actions {
+            margin: 0 auto;
             display: flex;
-            gap: 0.5rem;
-        }
-
-        .action-link {
-            color: #3498db;
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-
-        .action-link:hover {
-            text-decoration: underline;
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-            color: #2c3e50;
-        }
-
-        .form-group input,
-        .form-group select {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus {
-            outline: none;
-            border-color: #3498db;
-        }
-
-        .button-group {
-            display: flex;
+            align-items: center;
+            justify-content: space-between;
             gap: 1rem;
-            margin-top: 2rem;
         }
+        nav h1 { font-size: 1.125rem; font-weight:700; color:#000; }
+        nav ul { list-style:none; display:flex; gap:1rem; }
+        nav a { color:#000; text-decoration:none; font-weight:500; opacity:0.9 }
+        nav a:hover { text-decoration:underline; opacity:1 }
+
+        .container { max-width:1200px; margin:2rem auto; padding:0 1.25rem; }
+        .card { background:#fff; border-radius:6px; padding:1.25rem; box-shadow:0 1px 0 rgba(0,0,0,0.04); }
+        h2 { font-size:1.25rem; margin-bottom:0.5rem; color:#000; }
+
+        /* Minimalist buttons */
+        .btn { display:inline-block; padding:0.5rem 0.9rem; border-radius:4px; font-size:0.95rem; text-decoration:none; cursor:pointer; border:1px solid #111; background:#fff; color:#111 }
+        .btn:hover { background:#fafafa }
+        .btn-primary { background:#111; color:#fff; border-color:#111 }
+        .btn-primary:hover { background:#000 }
+        .btn-outline { background:transparent }
+
+        table { width:100%; border-collapse:collapse; margin-top:1rem }
+        table th, table td { padding:0.75rem 0.5rem; text-align:left; border-bottom:1px solid #f0f0f0 }
+        table th { font-weight:700; color:#111; font-size:0.95rem }
+        table tr:hover { background:#fafafa }
+
+        .actions { display:flex; gap:0.5rem; align-items:center }
+        .action-btn { font-size:0.875rem; padding:0.375rem 0.6rem; border-radius:4px; border:1px solid #111; background:#fff; color:#111; text-decoration:none }
+        .action-btn:hover { background:#fafafa }
+
+        .page-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem }
+        .page-title { font-size:1.25rem; font-weight:700; color:#000 }
     </style>
 </head>
 <body>
@@ -179,6 +65,11 @@
     </nav>
 
     <div class="container">
+        <div class="page-header">
+            <div class="page-title">@yield('title', 'Page')</div>
+            <div class="header-actions">@yield('header-actions')</div>
+        </div>
+
         @yield('content')
     </div>
 </body>
