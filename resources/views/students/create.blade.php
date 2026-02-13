@@ -6,7 +6,9 @@
 <div class="card">
     <h2>Add New Student</h2>
 
-    <form>
+    <form method="post" action="{{ route('students.store') }}">
+        @csrf
+        @method('post')
         <div class="form-group">
             <label for="name">Full Name</label>
             <input type="text" id="name" name="name" placeholder="Enter student's full name" required>

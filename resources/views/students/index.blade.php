@@ -19,7 +19,19 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
+            @foreach ($samples as $student )
+              <tr>
+                <td>{{ $student->name }}</td>
+                <td>{{ $student->course }}</td>
+                <td>{{ $student->year_level }}</td>
+                <td class="actions">
+                    <x-view-button href="{{ route('students.show', 1) }}">View</x-view-button>
+                    <x-edit-button href="{{ route('students.edit', 1) }}">Edit</x-edit-button>
+                </td>
+            </tr  
+            
+            {{-- THIS IS MY OLD DATA --}}
+            {{-- <tr>
                 <td>Natalio Solis</td>
                 <td>BS Computer Science</td>
                 <td>2nd Year</td>
@@ -63,7 +75,8 @@
                     <x-view-button href="{{ route('students.show', 5) }}">View</x-view-button>
                     <x-edit-button href="{{ route('students.edit', 5) }}">Edit</x-edit-button>
                 </td>
-            </tr>
+            </tr> --}}
+            @endforeach
         </tbody>
     </table>
 </div>
